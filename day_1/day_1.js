@@ -1,7 +1,9 @@
 const test = require('./day_1_data.js')
-const testData = test.testData.split('\n')
+const testData = test.testData.split(" ")
+const dataString = test.dataString.split(' ')
 
-//console.log(testData.split('\n'))
+console.log(testData)
+console.log(dataString)
 
 function trebuchet(arr) {
   let allNums = []
@@ -31,4 +33,4 @@ function stringy(string) {
   return Number(nums.join(''))
 }
 
-console.log(trebuchet(testData))
+console.log(trebuchet(dataString))
