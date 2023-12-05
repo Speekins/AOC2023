@@ -1,36 +1,19 @@
 const test = require('./day_1_data.js')
-const testData = test.testData.split(" ")
-const dataString = test.dataString.split(' ')
+const strings = require('./input.js')
+const testData = test.testData
+const dataString = test.dataString
 
-console.log(testData)
-console.log(dataString)
-
-function trebuchet(arr) {
+function trebuchet(allStrings) {
+  allStrings = allStrings.split(' ')
   let allNums = []
-  for (let i = 0; i < arr.length; i++) {
-    allNums.push(stringy(arr[i]))
+  for (let i = 0; i < allStrings.length; i++) {
+    let substring = allStrings[i].split('').filter(char => Number.isInteger(Number(char)))
+    let total = [substring[0], substring[substring.length - 1]].join('')
+    allNums.push(Number(total))
   }
   return allNums.reduce((a, b) => {
     return a + b
-  })
-}
-
-function stringy(string) {
-  let nums = [];
-  for (let i = 0; i < string.length; i++) {
-    if (Number.isInteger(Number(string[i]))) {
-      nums.push(string[i])
-      break
-    }
-  }
-  for (let i = string.length; i > 0; i--) {
-    if (Number.isInteger(Number(string[i]))) {
-      nums.push(string[i])
-      break
-    }
-  }
-  
-  return Number(nums.join(''))
+  }, 0)
 }
 
 console.log(trebuchet(dataString))
