@@ -3,6 +3,13 @@ const testData = ['1abc2',
   'a1b2c3d4e5f',
   'treb7uchet']
 
+const testData2 = "two1nine \
+eightwothree \
+abcone2threexyz \
+xtwone3four \
+4nineeightseven2 \
+zoneight234 \
+7pqrstsixteen"
 
 const dataString = "threerznlrhtkjp23mtflmbrzq395three \
 9sevenvlttm \
@@ -1005,4 +1012,4 @@ eightmkmdtvkctkvptsbckzpnkhpskdmp3 \
 six2twobgzsfsptlqnine42xtmdprjqc \
 pxreightwo7"
 
-module.exports = { testData, dataString }
+module.exports = { testData, testData2, dataString }
